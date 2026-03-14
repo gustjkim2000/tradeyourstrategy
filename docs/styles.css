@@ -128,7 +128,12 @@ body.intro-active .page-shell {
   display: grid;
   grid-template-columns: 1fr 420px;
   gap: 28px;
-  align-items: center;
+  align-items: stretch;
+}
+
+.auth-copy {
+  display: flex;
+  flex-direction: column;
 }
 
 .auth-copy h1 {
@@ -149,7 +154,8 @@ body.intro-active .page-shell {
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--line);
-  max-width: 100%;
+  width: 100%;
+  max-width: none;
 }
 
 .support-label,
@@ -223,6 +229,7 @@ body.intro-active .page-shell {
   flex-direction: column;
   justify-content: flex-start;
   gap: 10px;
+  height: 100%;
 }
 
 .auth-tabs {
@@ -629,7 +636,8 @@ body.intro-active .page-shell {
 }
 
 .auth-letter {
-  max-width: 600px;
+  width: 100%;
+  max-width: none;
   margin-top: 20px;
   padding: 20px 22px;
   border-radius: 24px;
