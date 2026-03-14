@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trade your Strategy</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="intro-active">
+    <div class="splash-screen" id="splashScreen" role="button" tabindex="0" aria-label="Enter Trade your Strategy">
+      <div class="splash-galaxy">
+        <span class="nebula nebula-a"></span>
+        <span class="nebula nebula-b"></span>
+        <span class="nebula nebula-c"></span>
+        <span class="orb orb-a"></span>
+        <span class="orb orb-b"></span>
+        <span class="orb orb-c"></span>
+        <span class="ring ring-a"></span>
+        <span class="ring ring-b"></span>
+        <span class="star star-a"></span>
+        <span class="star star-b"></span>
+        <span class="star star-c"></span>
+        <span class="star star-d"></span>
+        <span class="star star-e"></span>
+        <span class="star star-f"></span>
+        <span class="star star-g"></span>
+        <span class="star star-h"></span>
+      </div>
+      <div class="splash-copy">
+        <p class="eyebrow">Trade your Strategy</p>
+        <h1>Enter the Galaxy</h1>
+        <button class="primary-button" id="enterButton">Enter</button>
+      </div>
+    </div>
+    <div class="page-shell">
+      <div class="topbar" id="topbar">
+        <div class="topbar-user" id="topbarUser">Signed out</div>
+        <button class="ghost-button" id="logoutButton" type="button">Log Out</button>
+      </div>
+
+      <div class="view-shell" id="authView">
+        <section class="panel auth-panel">
+          <div class="auth-shell">
+            <div class="auth-copy">
+              <p class="eyebrow">Trade your Strategy</p>
+              <div class="brand-lockup">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <h1>Trade your Strategy</h1>
+              </div>
+              <p class="hero-subnote auth-subnote">
+                Launching in June 2026.
+                <button class="inline-account-button" type="button" data-account-toggle="auth">Support this student</button>
+              </p>
+              <p class="hero-text">
+                I am a student building this strategy platform. Sign in to preview the product and support the launch if you want to help.
+              </p>
+              <div class="support-callout">
+                <p class="support-label">Support a student builder</p>
+                <p class="support-text">If you want to support development before launch, you can reveal the donation account below.</p>
+                <button class="primary-button support-link" type="button" data-account-toggle="auth">Show donation account</button>
+                <div class="bank-reveal is-hidden" id="authAccountReveal">
+                  <span class="bank-name">Shinhan Bank</span>
+                  <strong>100-025-247636</strong>
+                </div>
+              </div>
+            </div>
+            <div class="auth-card">
+              <div class="auth-tabs">
+                <button class="ghost-button is-active" id="showSignIn" type="button">Sign In</button>
+                <button class="ghost-button" id="showSignUp" type="button">Sign Up</button>
+              </div>
+              <form id="authForm" class="auth-form">
+                <label id="nameField" class="auth-field is-hidden">
+                  <span>Name</span>
+                  <input id="authName" type="text" placeholder="Your name" />
+                </label>
+                <label class="auth-field">
+                  <span>Email</span>
+                  <input id="authEmail" type="email" placeholder="you@example.com" required />
+                </label>
+                <label class="auth-field">
+                  <span>Password</span>
+                  <input id="authPassword" type="password" placeholder="••••••••" required />
+                </label>
+                <button class="primary-button auth-submit" id="authSubmit" type="submit">Sign In</button>
+              </form>
+              <div class="auth-divider"><span>or continue with</span></div>
+              <div id="googleAuthMount" class="google-auth-mount"></div>
+              <button id="googleFallbackButton" class="google-fallback-button" type="button">
+                <span class="google-fallback-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18">
+                    <path fill="#EA4335" d="M12 10.2v3.9h5.4c-.2 1.3-1.7 3.9-5.4 3.9-3.2 0-5.9-2.7-5.9-6s2.7-6 5.9-6c1.8 0 3 .8 3.7 1.4l2.5-2.4C16.6 3.6 14.5 2.8 12 2.8 6.9 2.8 2.8 6.9 2.8 12S6.9 21.2 12 21.2c6.9 0 8.6-4.8 8.6-7.2 0-.5 0-.8-.1-1.2H12z"/>
+                    <path fill="#4285F4" d="M3.8 7.3l3.2 2.4C7.8 8 9.7 6.8 12 6.8c1.8 0 3 .8 3.7 1.4l2.5-2.4C16.6 3.6 14.5 2.8 12 2.8c-3.7 0-6.9 2.1-8.2 4.5z"/>
+                    <path fill="#FBBC05" d="M12 21.2c2.4 0 4.5-.8 6.1-2.2l-2.8-2.3c-.8.5-1.9.9-3.3.9-3.6 0-5.2-2.4-5.4-3.7l-3.2 2.5c1.3 2.6 4.2 4.8 8.6 4.8z"/>
+                    <path fill="#34A853" d="M6.6 13.9c-.2-.5-.3-1.1-.3-1.9s.1-1.3.3-1.9L3.4 7.6C2.9 8.7 2.8 10 2.8 12s.1 3.3.6 4.4l3.2-2.5z"/>
+                  </svg>
+                </span>
+                <span>Continue with Google</span>
+              </button>
+              <p id="googleAuthHint" class="auth-hint">Google sign-in loads when a Google client ID is configured.</p>
+              <p id="authMessage" class="auth-message">Use your account to unlock the marketplace and dashboard.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="view-shell is-active" id="dashboardView">
+        <section class="hero panel">
+          <div class="hero-copy">
+            <div class="brand-lockup">
+              <span class="brand-mark" aria-hidden="true"></span>
+              <h1>Trade your Strategy</h1>
+            </div>
+            <p class="hero-subnote">
+              Launching in June 2026.
+              <button class="inline-account-button" type="button" data-account-toggle="hero">Support account</button>
+            </p>
+            <div class="bank-reveal is-hidden" id="heroAccountReveal">
+              <span class="bank-name">Shinhan Bank</span>
+              <strong>100-025-247636</strong>
+            </div>
+            <div class="hero-actions">
+              <button class="primary-button" id="purchaseButton">Apply your Strategy</button>
+              <button class="ghost-button" id="connectShortcut">Connect Polymarket</button>
+            </div>
+            <div class="hero-footnote">
+              In a production flow, payment confirmation would be followed by license issuance,
+              geoblock checks, and wallet or API authorization.
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="floating-stat">
+              <span>30D cumulative</span>
+              <strong id="heroReturn">+18.42%</strong>
+            </div>
+            <div class="glass-preview">
+              <div class="preview-header">
+                <span>Live monitor</span>
+                <span class="status-pill online" id="liveMonitorPill">connecting</span>
+              </div>
+              <div class="mini-signals-ticker">
+                <div id="miniSignals" class="mini-signals"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel owned-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">My Strategies</p>
+              <h2>Purchased strategies</h2>
+            </div>
+            <button class="ghost-button" id="openMyStrategies">View All</button>
+          </div>
+          <div class="owned-row" id="ownedStrategiesRow"></div>
+        </section>
+
+        <section class="panel marketplace-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Marketplace</p>
+              <h2>Buy and apply strategy packs</h2>
+            </div>
+            <div class="marketplace-summary" id="marketplaceSummary">Browse creator strategies</div>
+          </div>
+          <div class="marketplace-grid" id="marketplaceGrid"></div>
+        </section>
+
+        <section class="grid-layout">
+          <div class="panel onboarding-panel">
+            <div class="section-heading">
+              <p class="eyebrow">Onboarding</p>
+              <h2>Activation flow after purchase</h2>
+            </div>
+
+            <div class="timeline" id="timeline">
+              <article class="timeline-step is-active" data-step="purchase">
+                <div>
+                  <h3>1. Purchase confirmed</h3>
+                  <p>Your license is issued and the account connection flow is unlocked.</p>
+                </div>
+                <span class="step-badge">Ready</span>
+              </article>
+              <article class="timeline-step" data-step="connect">
+                <div>
+                  <h3>2. Connect Polymarket</h3>
+                  <p>Link wallet or account access for market reads and trading permissions.</p>
+                </div>
+                <button class="inline-button" id="connectButton">Connect</button>
+              </article>
+              <article class="timeline-step" data-step="configure">
+                <div>
+                  <h3>3. Configure strategy</h3>
+                  <p>Set minimum edge, max stake, and daily loss controls.</p>
+                </div>
+                <span class="step-badge muted" id="configStatus">Pending</span>
+              </article>
+              <article class="timeline-step" data-step="live">
+                <div>
+                  <h3>4. Go live</h3>
+                  <p>Start monitoring live markets and arm automated entries.</p>
+                </div>
+                <span class="step-badge muted" id="liveStatus">Standby</span>
+              </article>
+            </div>
+
+            <div class="connect-card" id="connectCard">
+              <div class="connect-header">
+                <div>
+                  <p class="eyebrow">Connection</p>
+                  <h3 id="connectionTitle">Connect your account to unlock live automation.</h3>
+                </div>
+                <span class="status-pill" id="connectionPill">not connected</span>
+              </div>
+
+              <div class="connect-grid">
+                <label>
+                  <span>Strategy</span>
+                  <div class="strategy-picker" id="strategyPicker"></div>
+                  <select id="strategySelect" class="sr-only" aria-hidden="true" tabindex="-1">
+                    <option>YES/NO Parity Reversal</option>
+                    <option>Basket Lock Only</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Minimum edge</span>
+                  <input id="edgeInput" type="range" min="0.01" max="0.05" step="0.005" value="0.02" />
+                  <strong id="edgeValue">2.0%</strong>
+                </label>
+                <label>
+                  <span>Max stake</span>
+                  <input id="stakeInput" type="range" min="25" max="500" step="25" value="100" />
+                  <strong id="stakeValue">$100</strong>
+                </label>
+                <label>
+                  <span>Daily loss limit</span>
+                  <input id="lossInput" type="range" min="50" max="1000" step="50" value="250" />
+                  <strong id="lossValue">$250</strong>
+                </label>
+              </div>
+
+              <div class="connect-actions">
+                <button class="primary-button" id="activateButton" disabled>Start Automation</button>
+                <p id="connectHint">Connect your Polymarket account first.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel metrics-panel">
+            <div class="section-heading">
+              <p class="eyebrow">Performance</p>
+              <h2>Cumulative return dashboard</h2>
+            </div>
+
+            <div class="stats-grid">
+              <article class="metric-card">
+                <span>Cumulative return</span>
+                <strong id="cumulativeReturn">+18.42%</strong>
+                <small>since activation</small>
+              </article>
+              <article class="metric-card">
+                <span>Total PnL</span>
+                <strong id="totalPnl">+$4,612</strong>
+                <small>after fees</small>
+              </article>
+              <article class="metric-card">
+                <span>Win rate</span>
+                <strong id="winRate">71.8%</strong>
+                <small>closed cycles</small>
+              </article>
+              <article class="metric-card">
+                <span>Capital deployed</span>
+                <strong id="capitalDeployed">$2,400</strong>
+                <small>live allocation</small>
+              </article>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-header">
+                <div>
+                  <p class="eyebrow">Equity Curve</p>
+                  <h3>30 day cumulative return</h3>
+                </div>
+                <span class="status-pill warm" id="botStatus">awaiting connection</span>
+              </div>
+              <svg id="performanceChart" viewBox="0 0 640 240" role="img" aria-label="Cumulative return chart"></svg>
+              <div class="chart-legend">
+                <span><i class="legend-line"></i>Strategy curve</span>
+                <span><i class="legend-dot"></i>Latest trade cluster</span>
+              </div>
+            </div>
+
+            <div class="signal-card">
+              <div class="chart-header">
+                <div>
+                  <p class="eyebrow">Execution Feed</p>
+                  <h3>Live strategy signals</h3>
+                </div>
+                <span class="status-pill cool" id="executionMode">demo feed</span>
+              </div>
+              <div class="signal-list" id="signalList"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="view-shell" id="myStrategiesView">
+        <section class="panel library-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Library</p>
+              <h2>My purchased strategies</h2>
+            </div>
+            <button class="ghost-button" id="backToDashboard">Back to Dashboard</button>
+          </div>
+          <div class="library-summary" id="librarySummary">Your owned strategies appear here.</div>
+          <div class="library-grid" id="myStrategiesGrid"></div>
+        </section>
+      </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

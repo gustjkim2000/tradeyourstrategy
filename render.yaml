@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: trade-your-strategy
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 24.14.0
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: POLYMARKET_PRIVATE_KEY
+        sync: false
+      - key: POLYMARKET_FUNDER
+        sync: false
+      - key: POLYMARKET_SIGNATURE_TYPE
+        value: POLY_PROXY
+      - key: POLYMARKET_CHAIN_ID
+        value: 137
+      - key: POLYMARKET_API_KEY_NONCE
+        value: 0
+    disk:
+      name: data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1
