@@ -146,6 +146,7 @@ body.intro-active .page-shell {
 
 .static-shell {
   grid-template-columns: 1.1fr 0.9fr;
+  align-items: start;
 }
 
 .support-callout {
@@ -364,7 +365,9 @@ body.intro-active .page-shell {
 }
 
 .static-card {
-  justify-content: center;
+  justify-content: flex-start;
+  align-self: start;
+  margin-top: 250px;
 }
 
 .preview-stack {
@@ -1519,6 +1522,10 @@ label strong {
   .static-shell,
   .auth-shell {
     grid-template-columns: 1fr;
+  }
+
+  .static-card {
+    margin-top: 0;
   }
 
   .preview-metrics {
