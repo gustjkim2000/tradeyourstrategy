@@ -408,8 +408,13 @@ body.intro-active .page-shell {
 }
 
 .static-cta {
-  width: fit-content;
+  width: 100%;
   text-decoration: none;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 26px;
 }
 
 .splash-screen {
@@ -1513,7 +1518,6 @@ label strong {
   }
 
   .static-cta {
-    width: 100%;
     justify-content: center;
   }
 }
